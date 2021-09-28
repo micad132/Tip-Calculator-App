@@ -1,0 +1,513 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+$primary-strong-cyan: hsl(172, 67%, 45%);
+
+$neutral-very-dark-cyan: hsl(183, 100%, 15%);
+$neutral-dark-grayish-cyan: hsl(186, 14%, 43%);
+$neutral-dark-grayish-cyan2: hsl(184, 14%, 56%);
+$neutral-light-grayish-cyan: hsl(185, 41%, 84%);
+$neutral-light-grayish-cyan: hsl(189, 41%, 97%);
+$neutral-white: hsl(0, 0%, 100%);
+
+
+
+@mixin flex{
+    display: flex;
+    justify-content: space-between;
+}
+
+*{
+    box-sizing: border-box;
+    padding:0;
+    margin: 0;
+}
+
+body{
+    background-color: $neutral-dark-grayish-cyan2;
+    font-family: 'Space Mono' , monospace;
+    padding: 3rem;
+    min-height: 100vh;
+
+
+    button{
+        cursor: pointer;
+    }
+
+    h1{
+        text-align: center;
+        margin-top: 2rem;
+        text-transform: uppercase;
+        letter-spacing: 0.4rem;
+        color: $neutral-dark-grayish-cyan;
+    }
+
+    main{
+        margin-top: 1rem;
+        background-color: #fff;
+        height: auto;
+        min-height: 600px;
+        
+        border-radius: 20px;
+
+        .container-left{
+
+            width: 90%;
+            margin: 0 auto;
+
+
+            .flex{
+                @include flex;
+
+
+                .bill-error{
+                    visibility: hidden;
+                    color: red;
+                }
+                
+            }
+            
+            .bill{
+
+                width: 100%;
+                margin: 0 auto;
+                
+                padding: 1rem 0;
+
+                .label{
+                    font-weight: 700;
+                    color:hsl(186, 14%, 43%);
+                }
+
+                .input{
+                    
+                    margin-top: 0.2rem;
+                    width: 100%;
+                    border-radius: 5px;
+                    border: 0;
+                    background-color: $neutral-light-grayish-cyan;
+                    padding: 0.3rem 0;
+                    position: relative;
+                    
+                    outline: 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    
+
+                    #bill-value{
+                        display: block;
+                        height: 100%;
+                        width: 100%;
+                        padding: 0 2rem;
+                        border: 0;
+                        background-color: transparent;
+                        text-align: right;
+                        font-family: 'Space Mono' , monospace;
+                        color: $neutral-very-dark-cyan;
+                        font-weight: 900;
+                        order: 2;
+                        
+
+                        &:focus {
+                            outline:none;
+                           
+                        }
+                    }
+
+                    .dollar{
+                        order: 1;
+                        margin-left: 1rem;
+                    }
+
+                    
+
+                    //  &::before{
+                    //      content: '$';
+                    //      display: block;
+                    //      position: absolute;
+                    //      color: lightblue;
+                    //      top:30%;
+                    //      left: 5%;
+                         
+                        
+                    //  }
+                }
+            }
+
+
+            .tip-container{
+
+                margin: 0.5rem 0;
+                position: relative;
+                z-index: 0;
+                .tip-container__error{
+                    position: absolute;
+                    visibility: hidden;
+                    
+                    width: 100%;
+                    height: 100%;
+                    background-color: hsl(183, 100%, 15%);
+                    z-index: 1;
+                    color: #fff;
+                    font-weight: 900;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 2rem;
+                    letter-spacing: 0.1rem;
+
+                    // &::before{
+                    //     content: '';
+                    //     display: block;
+                    //     position: absolute;
+                    //     width: 100%;
+                    //     height: 5px;
+                    //     background-color: red;
+                    //     top: 0;
+                    //     left: 2px;
+                    //     transform: rotate(20deg);
+                    //     transform-origin: top left;
+                    // }
+                }
+                .tip-container__items{
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 0.9rem;
+                    
+                    justify-content: space-evenly;
+
+
+                    .value{
+                        width: 46%;
+                        padding: 0.5rem 0;
+                        text-align: center;
+                        background-color: $neutral-very-dark-cyan;
+                        border-radius: 5px;
+                        color: #fff;
+                        font-size: 1.2rem;
+                        cursor: pointer;
+
+                        &:hover{
+                            background-color: $primary-strong-cyan;
+                        }
+                    }
+
+
+                    .value.active{
+                        background-color: $primary-strong-cyan;
+                        
+                    }
+
+                    #tip-custom{
+                        width: 46%;
+                        background-color: $neutral-light-grayish-cyan;
+                        border-radius: 5px;
+                        border: 0;
+                        text-align: center;
+                        color:hsl(183, 100%, 15%);
+                        font-weight: 700;
+                        font-size: 1.2rem;
+                        
+
+                        &:focus{
+                            outline: none;
+                        }
+
+                    }
+                }
+            }
+
+            
+
+            .number-people{
+
+                .flex{
+                    @include flex;
+                }
+
+                .error{
+                    display: inline-block;
+                    color: red;
+                    visibility: hidden;
+                }
+                .input{
+                    margin-top: 0.2rem;
+                    width: 100%;
+                    border-radius: 5px;
+                    border: 0;
+                    background-color: $neutral-light-grayish-cyan;
+                    padding: 0.3rem 0;
+                    position: relative;
+                    
+                    outline: 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+
+                .input.error{
+                    border: 2px solid red;
+                }
+
+                #number-of-people{
+                        height: 100%;
+                        width: 100%;
+                        padding: 0 2rem;
+                        border: 0;
+                        background-color: transparent;
+                        text-align: right;
+                        font-family: 'Space Mono' , monospace;
+                        color: $neutral-very-dark-cyan;
+                        font-weight: 900;
+                        order: 2;
+                        
+
+                        &:focus{
+                            outline: none;
+                        }
+                }
+
+                .person{
+                    margin-left: 1rem;
+                }
+            }
+        }
+
+        .container-right{
+            
+            width: 90%;
+            margin: 1.2rem auto 0 auto;
+            padding: 1.5rem 0;
+            border-radius: 10px;
+            background-color: hsl(183, 100%, 15%);
+            overflow: hidden;
+
+            .tip-amount{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                
+                width: 90%;
+                margin: 0.5rem auto 0 auto;
+
+                .text-tip{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    h2{
+                        color: #fff;
+                        font-size: 1rem;
+                    }
+                    p{
+                        font-size: 0.7rem;
+                        color:hsl(184, 14%, 56%);
+                    }
+                }
+
+                .tip-value{
+                    color: hsl(172, 67%, 45%);
+                    font-weight: 900;
+                    font-size: 1.4rem;
+                }
+            }
+
+            .tip-total{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                
+                width: 90%;
+                margin: 0.5rem auto 0 auto;
+                .text-person{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    h2{
+                        color: #fff;
+                        font-size: 1rem;
+                    }
+                    p{
+                        font-size: 0.7rem;
+                        color:hsl(184, 14%, 56%);
+                    }
+                }
+                .person-value{
+                    color: hsl(172, 67%, 45%);
+                    font-weight: 900;
+                    font-size: 1.4rem;
+                }
+            }
+        }
+
+        .reset{
+            display: block;
+            width: 90%;
+            margin: 1rem auto 0 auto;
+            padding: 0.7rem 0;
+            border: 0;
+            border-radius: 5px;
+            background-color: hsl(172, 67%, 45%);
+            color:hsl(183, 100%, 15%);
+            font-weight: 900;
+            text-transform: uppercase;
+
+            &:hover{
+                background-color: hsl(172, 81%, 54%);
+            }
+
+            &:active{
+                transform: scale(0.95);
+            }
+        }
+
+    }
+
+    label{
+        font-weight: 700;
+        color:hsl(186, 14%, 43%);
+    }
+    
+}
+
+
+@media (max-width:450px)
+{
+    body{
+        main{
+            .container-left{
+                .tip-container{
+                    .tip-container__error{
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media all and (min-width: 750px){
+
+    
+    body{
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+
+        h1{
+            // position: absolute;
+            // top: 2rem;
+            margin-bottom: 5rem;
+            
+            
+
+        }
+
+        main{
+
+
+            
+            min-height: 400px;
+            width: 90%;
+            margin: 0 auto 0 auto;
+            max-width: 750px;
+            
+            
+            
+           
+            .wrapper{
+
+
+                
+                margin: 1rem auto 0 auto;
+                height: 90%;
+                width: 90%;
+                display: flex;
+                
+                justify-content: space-between;
+                
+
+                & > *{
+                    width: 48%;
+                    height: 100%;
+                    margin: 0;
+                }
+
+
+                .container-left{
+                    
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+
+
+                    .tip-container{
+                        .tip-container__items{
+
+
+                            gap: 0.4rem;
+                            
+                            .value{
+                                width: 30%;
+                            }
+
+                            #tip-custom{
+                                display: block;
+                                width: 30%;
+                            }
+                        }
+                    }
+                }
+                .container-right{
+                    
+                    
+                    .tip-amount{
+                        margin-bottom: 2rem;
+                        .tip-value{
+                            font-size: 2rem;
+                        }
+                    }
+
+                    .tip-total{
+
+                        .person-value{
+                            font-size: 2rem;
+                        }
+                    }
+
+                    .reset{
+                        margin-top: 8rem;
+                    }
+
+
+
+                    
+                }
+            }
+            
+            // background-color: lightblue;
+            
+            
+            
+            
+            
+            
+
+            
+
+            
+
+        }
+
+
+    }
+    
+    
+
+}
+
+

@@ -1,0 +1,454 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #7f9c9f;
+  font-family: 'Space Mono' , monospace;
+  padding: 3rem;
+  min-height: 100vh;
+}
+
+body button {
+  cursor: pointer;
+}
+
+body h1 {
+  text-align: center;
+  margin-top: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4rem;
+  color: #5e7a7d;
+}
+
+body main {
+  margin-top: 1rem;
+  background-color: #fff;
+  height: auto;
+  min-height: 600px;
+  border-radius: 20px;
+}
+
+body main .container-left {
+  width: 90%;
+  margin: 0 auto;
+}
+
+body main .container-left .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body main .container-left .flex .bill-error {
+  visibility: hidden;
+  color: red;
+}
+
+body main .container-left .bill {
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+
+body main .container-left .bill .label {
+  font-weight: 700;
+  color: #5e7a7d;
+}
+
+body main .container-left .bill .input {
+  margin-top: 0.2rem;
+  width: 100%;
+  border-radius: 5px;
+  border: 0;
+  background-color: #f4fafa;
+  padding: 0.3rem 0;
+  position: relative;
+  outline: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body main .container-left .bill .input #bill-value {
+  display: block;
+  height: 100%;
+  width: 100%;
+  padding: 0 2rem;
+  border: 0;
+  background-color: transparent;
+  text-align: right;
+  font-family: 'Space Mono' , monospace;
+  color: #00494d;
+  font-weight: 900;
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+}
+
+body main .container-left .bill .input #bill-value:focus {
+  outline: none;
+}
+
+body main .container-left .bill .input .dollar {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  margin-left: 1rem;
+}
+
+body main .container-left .tip-container {
+  margin: 0.5rem 0;
+  position: relative;
+  z-index: 0;
+}
+
+body main .container-left .tip-container .tip-container__error {
+  position: absolute;
+  visibility: hidden;
+  width: 100%;
+  height: 100%;
+  background-color: #00494d;
+  z-index: 1;
+  color: #fff;
+  font-weight: 900;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 2rem;
+  letter-spacing: 0.1rem;
+}
+
+body main .container-left .tip-container .tip-container__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 0.9rem;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+body main .container-left .tip-container .tip-container__items .value {
+  width: 46%;
+  padding: 0.5rem 0;
+  text-align: center;
+  background-color: #00494d;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+body main .container-left .tip-container .tip-container__items .value:hover {
+  background-color: #26c0ab;
+}
+
+body main .container-left .tip-container .tip-container__items .value.active {
+  background-color: #26c0ab;
+}
+
+body main .container-left .tip-container .tip-container__items #tip-custom {
+  width: 46%;
+  background-color: #f4fafa;
+  border-radius: 5px;
+  border: 0;
+  text-align: center;
+  color: #00494d;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+body main .container-left .tip-container .tip-container__items #tip-custom:focus {
+  outline: none;
+}
+
+body main .container-left .number-people .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body main .container-left .number-people .error {
+  display: inline-block;
+  color: red;
+  visibility: hidden;
+}
+
+body main .container-left .number-people .input {
+  margin-top: 0.2rem;
+  width: 100%;
+  border-radius: 5px;
+  border: 0;
+  background-color: #f4fafa;
+  padding: 0.3rem 0;
+  position: relative;
+  outline: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body main .container-left .number-people .input.error {
+  border: 2px solid red;
+}
+
+body main .container-left .number-people #number-of-people {
+  height: 100%;
+  width: 100%;
+  padding: 0 2rem;
+  border: 0;
+  background-color: transparent;
+  text-align: right;
+  font-family: 'Space Mono' , monospace;
+  color: #00494d;
+  font-weight: 900;
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+}
+
+body main .container-left .number-people #number-of-people:focus {
+  outline: none;
+}
+
+body main .container-left .number-people .person {
+  margin-left: 1rem;
+}
+
+body main .container-right {
+  width: 90%;
+  margin: 1.2rem auto 0 auto;
+  padding: 1.5rem 0;
+  border-radius: 10px;
+  background-color: #00494d;
+  overflow: hidden;
+}
+
+body main .container-right .tip-amount {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 90%;
+  margin: 0.5rem auto 0 auto;
+}
+
+body main .container-right .tip-amount .text-tip {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body main .container-right .tip-amount .text-tip h2 {
+  color: #fff;
+  font-size: 1rem;
+}
+
+body main .container-right .tip-amount .text-tip p {
+  font-size: 0.7rem;
+  color: #7f9c9f;
+}
+
+body main .container-right .tip-amount .tip-value {
+  color: #26c0ab;
+  font-weight: 900;
+  font-size: 1.4rem;
+}
+
+body main .container-right .tip-total {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 90%;
+  margin: 0.5rem auto 0 auto;
+}
+
+body main .container-right .tip-total .text-person {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body main .container-right .tip-total .text-person h2 {
+  color: #fff;
+  font-size: 1rem;
+}
+
+body main .container-right .tip-total .text-person p {
+  font-size: 0.7rem;
+  color: #7f9c9f;
+}
+
+body main .container-right .tip-total .person-value {
+  color: #26c0ab;
+  font-weight: 900;
+  font-size: 1.4rem;
+}
+
+body main .reset {
+  display: block;
+  width: 90%;
+  margin: 1rem auto 0 auto;
+  padding: 0.7rem 0;
+  border: 0;
+  border-radius: 5px;
+  background-color: #26c0ab;
+  color: #00494d;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+body main .reset:hover {
+  background-color: #2be9cf;
+}
+
+body main .reset:active {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+body label {
+  font-weight: 700;
+  color: #5e7a7d;
+}
+
+@media (max-width: 450px) {
+  body main .container-left .tip-container .tip-container__error {
+    font-size: 1.5rem;
+  }
+}
+
+@media all and (min-width: 750px) {
+  body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: 100vh;
+  }
+  body h1 {
+    margin-bottom: 5rem;
+  }
+  body main {
+    min-height: 400px;
+    width: 90%;
+    margin: 0 auto 0 auto;
+    max-width: 750px;
+  }
+  body main .wrapper {
+    margin: 1rem auto 0 auto;
+    height: 90%;
+    width: 90%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  body main .wrapper > * {
+    width: 48%;
+    height: 100%;
+    margin: 0;
+  }
+  body main .wrapper .container-left {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  body main .wrapper .container-left .tip-container .tip-container__items {
+    gap: 0.4rem;
+  }
+  body main .wrapper .container-left .tip-container .tip-container__items .value {
+    width: 30%;
+  }
+  body main .wrapper .container-left .tip-container .tip-container__items #tip-custom {
+    display: block;
+    width: 30%;
+  }
+  body main .wrapper .container-right .tip-amount {
+    margin-bottom: 2rem;
+  }
+  body main .wrapper .container-right .tip-amount .tip-value {
+    font-size: 2rem;
+  }
+  body main .wrapper .container-right .tip-total .person-value {
+    font-size: 2rem;
+  }
+  body main .wrapper .container-right .reset {
+    margin-top: 8rem;
+  }
+}
+/*# sourceMappingURL=main.css.map */
